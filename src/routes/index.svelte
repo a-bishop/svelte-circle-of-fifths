@@ -287,12 +287,14 @@
 	}
 	.tonic-selection-list-item {
 		font-size: 120%;
-		margin: 5px;
-		padding: 5px;
+		font-weight: bold;
+		margin: 10px;
+		padding: 10px;
 		width: 25px;
 		text-align: center;
 		background: linen;
 		box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.69);
+		border-radius: 10px;
 	}
 	#main-circle {
 		position: relative;
