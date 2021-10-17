@@ -1,4 +1,7 @@
 import preprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-static';
+
+const dev = process.env.NODE_ENV === 'development';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,7 +11,20 @@ const config = {
 
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+		// for gh-pages deployment - has to match the repo name
+		paths: {
+			base: dev ? '' : '/svelte-circle-of-fifths',
+		},
+		files: {
+			assets: './src/assets'
+		},
+		adapter: adapter({
+			// default options are shown
+			pages: 'build',
+			assets: 'build',
+			fallback: null
+		})
 	}
 };
 
