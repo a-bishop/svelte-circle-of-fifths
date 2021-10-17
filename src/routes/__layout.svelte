@@ -9,8 +9,7 @@
 		display: flex;
 		flex-direction: column;
 		padding: 1rem;
-		width: 100%;
-		max-width: 800px;
+		width: 800px;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}

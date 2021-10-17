@@ -267,9 +267,6 @@
 		--arrow-left: 240px;
 		--arrow-rotate: 0deg;
 	}
-	body {
-		max-width: 800px;
-	}
 	.flex-row {
 		display: flex;
 		flex-direction: row;
