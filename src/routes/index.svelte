@@ -1,6 +1,4 @@
 <script>
-	import { tweened } from 'svelte/motion';
-	import { cubicOut } from 'svelte/easing';
 	import { onMount } from 'svelte';
 
 	let ready = false;
@@ -8,40 +6,41 @@
 		ready = true;
 	});
 
-	// Hash table of key signatures, where the key is the number of sharps (positive) or flats (negative).
+	// Hash ta♭le of key signatures, where the key is the number of sharps (positive) or flats (negative).
 	// The value is an array of note names in the key signature, starting at the 12:00 clock position
 	// and ending at the 11:00 position.
 	const keySignatures = {
-		'-13': ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-12': ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-11': ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-10': ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-9': ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-8': ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-7': ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-6': ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-5': ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-4': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-3': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-2': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'-1': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'0': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'1': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Db', 'Ab', 'Eb', 'Bb', 'F'],
-		'2': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'Ab', 'Eb', 'Bb', 'F'],
-		'3': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'Eb', 'Bb', 'F'],
-		'4': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'Bb', 'F'],
-		'5': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'F'],
-		'6': ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'E#'],
-		'7': ['B#', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'E#'],
-		'8': ['B#', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'E#'],
-		'9': ['B#', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'E#'],
-		'10': ['B#', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'E#'],
-		'11': ['B#', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'E#'],
-		'12': ['B#', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'E#'],
-		'13': ['B#', 'G', 'D', 'A', 'E', 'B', 'F#', 'C#', 'G#', 'D#', 'A#', 'E#']
+		'-13': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-12': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-11': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-10': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-9': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-8': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-7': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-6': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-5': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-4': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-3': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-2': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-1': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'0': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'1': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'2': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'A♭', 'E♭', 'B♭', 'F'],
+		'3': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'E♭', 'B♭', 'F'],
+		'4': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'B♭', 'F'],
+		'5': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'F'],
+		'6': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
+		'7': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
+		'8': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
+		'9': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
+		'10': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
+		'11': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
+		'12': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
+		'13': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯']
 	};
 
-	// corresponds to the css positioning for the scale degree and arrow at each pie segment
+	// corresponds to the css positioning for the scale degree and arrow at each pie segment,
+	// starting at the 12:00 clock position and ending at the 11:00 position.
 	const cssPositions = [
 		{
 			scaleDegree: {
@@ -178,64 +177,61 @@
 	];
 
 	const positionAngles = [
-		'-15',
-		'15',
-		'45',
-		'75',
-		'105',
-		'135',
-		'165',
-		'195',
-		'225',
-		'255',
-		'285',
-		'315'
+		'-15deg',
+		'15deg',
+		'45deg',
+		'75deg',
+		'105deg',
+		'135deg',
+		'165deg',
+		'195deg',
+		'225deg',
+		'255deg',
+		'285deg',
+		'315deg'
 	];
 
 	const tonicMap = {
-		C: { rotation: 11, arrowPosition: 0, kSig: 1 },
-		G: { rotation: 0, arrowPosition: 1, kSig: 2 },
-		D: { rotation: 1, arrowPosition: 2, kSig: 3 },
-		A: { rotation: 2, arrowPosition: 3, kSig: 4 },
-		E: { rotation: 3, arrowPosition: 4, kSig: 5 },
-		B: { rotation: 4, arrowPosition: 5, kSig: 6 },
-		Gb: { rotation: 5, arrowPosition: 6, kSig: -5 },
-		Db: { rotation: 6, arrowPosition: 7, kSig: -4 },
-		Ab: { rotation: 7, arrowPosition: 8, kSig: -3 },
-		Eb: { rotation: 8, arrowPosition: 9, kSig: -2 },
-		Bb: { rotation: 9, arrowPosition: 10, kSig: -1 },
-		F: { rotation: 10, arrowPosition: 11, kSig: 0 },
-		'E#': { rotation: 10, arrowPosition: 11, kSig: 12 },
-		'A#': { rotation: 9, arrowPosition: 10, kSig: 11 },
-		'D#': { rotation: 8, arrowPosition: 9, kSig: 10 },
-		'G#': { rotation: 7, arrowPosition: 8, kSig: 9 },
-		'C#': { rotation: 6, arrowPosition: 7, kSig: 8 },
-		'F#': { rotation: 5, arrowPosition: 6, kSig: 7 }
+		C: { rotation: 11, arrowPosition: 0, kSig: 1, relativeMinor: 'a' },
+		G: { rotation: 0, arrowPosition: 1, kSig: 2, relativeMinor: 'e' },
+		D: { rotation: 1, arrowPosition: 2, kSig: 3, relativeMinor: 'b' },
+		A: { rotation: 2, arrowPosition: 3, kSig: 4, relativeMinor: 'f♯' },
+		E: { rotation: 3, arrowPosition: 4, kSig: 5, relativeMinor: 'c♯' },
+		B: { rotation: 4, arrowPosition: 5, kSig: 6, relativeMinor: 'g♯' },
+		'G♭': { rotation: 5, arrowPosition: 6, kSig: -5, relativeMinor: 'e♭' },
+		'D♭': { rotation: 6, arrowPosition: 7, kSig: -4, relativeMinor: 'b♭' },
+		'A♭': { rotation: 7, arrowPosition: 8, kSig: -3, relativeMinor: 'f' },
+		'E♭': { rotation: 8, arrowPosition: 9, kSig: -2, relativeMinor: 'c' },
+		'B♭': { rotation: 9, arrowPosition: 10, kSig: -1, relativeMinor: 'g' },
+		F: { rotation: 10, arrowPosition: 11, kSig: 0, relativeMinor: 'd' },
+		'D♯': { rotation: 8, arrowPosition: 9, kSig: 10, relativeMinor: 'b♯' },
+		'G♯': { rotation: 7, arrowPosition: 8, kSig: 9, relativeMinor: 'e♯' },
+		'C♯': { rotation: 6, arrowPosition: 7, kSig: 8, relativeMinor: 'a♯' },
+		'F♯': { rotation: 5, arrowPosition: 6, kSig: 7, relativeMinor: 'd♯' }
 	};
 
 	const degrees = ['IV', 'I', 'V', 'II', 'vi', 'iii', 'vii'];
 
-	// const progress = tweened(0.3, {
-	// 	duration: 400,
-	// 	easing: cubicOut
-	// });
-
 	let tonic = 'C';
 	$: kSig = tonicMap[tonic].kSig;
 	$: notes = keySignatures[kSig];
-	$: tonic && !!ready && update();
+	$: relativeMinor = tonicMap[tonic].relativeMinor;
+	$: rotation = tonicMap[tonic].rotation;
+	$: angle = positionAngles[rotation];
+	$: arrowPosition = tonicMap[tonic].arrowPosition;
+	$: arrowTop = cssPositions[arrowPosition].arrow.top;
+	$: arrowLeft = cssPositions[arrowPosition].arrow.left;
+	$: arrowRotate = cssPositions[arrowPosition].arrow.rotate;
+	$: tonic && ready && update();
 
 	function update() {
 		const rootStyle = document.documentElement.style;
-		rootStyle.setProperty('--rotation', `${positionAngles[tonicMap[tonic].rotation]}deg`);
-		rootStyle.setProperty(`--arrow-top`, cssPositions[tonicMap[tonic].arrowPosition].arrow.top);
-		rootStyle.setProperty(`--arrow-left`, cssPositions[tonicMap[tonic].arrowPosition].arrow.left);
-		rootStyle.setProperty(
-			`--arrow-rotate`,
-			cssPositions[tonicMap[tonic].arrowPosition].arrow.rotate
-		);
+		rootStyle.setProperty('--rotation', angle);
+		rootStyle.setProperty(`--arrow-top`, arrowTop);
+		rootStyle.setProperty(`--arrow-left`, arrowLeft);
+		rootStyle.setProperty(`--arrow-rotate`, arrowRotate);
 
-		let j = tonicMap[tonic].rotation;
+		let j = rotation;
 		for (let i = 0; i < degrees.length; i++) {
 			rootStyle.setProperty(`--degree_${degrees[i]}_top`, cssPositions[j].scaleDegree.top);
 			rootStyle.setProperty(`--degree_${degrees[i]}_left`, cssPositions[j].scaleDegree.left);
@@ -286,6 +282,9 @@
 		margin: 20px auto;
 	}
 	.tonic-selection-list-item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		font-size: 120%;
 		font-weight: bold;
 		margin: 10px;
@@ -458,7 +457,17 @@
 		left: var(--degree_IV_left);
 	}
 
-	.arrow-up {
+	#relative-minor {
+		width: 100px;
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		z-index: 5;
+		top: 230px;
+		left: 220px;
+	}
+
+	#arrow-up {
 		width: 0;
 		height: 0;
 		border-left: 10px solid transparent;
@@ -478,12 +487,12 @@
 		border-radius: 1000px;
 		transform: rotate(var(--rotation));
 		z-index: 3;
-		background-color: var(--white);
+		background-color: var(--secondary-color);
 	}
 	#semicircle::before {
 		content: '';
 		position: absolute;
-		background-color: var(--grey);
+		background-color: lightgray;
 		width: 250px;
 		height: 500px;
 		border-top-left-radius: 1000px;
@@ -492,7 +501,7 @@
 	#semicircle::after {
 		content: '';
 		position: absolute;
-		background-color: var(--white);
+		background-color: var(--secondary-color);
 		width: 250px;
 		height: 500px;
 		top: 63px;
@@ -505,7 +514,7 @@
 
 <body>
 	<div class="center">
-		<h1>Interactive Circle of Fifths</h1>
+		<h1>Circle of Fifths</h1>
 		<h3 class="center">Choose Tonic:</h3>
 		<ul class="tonic-selection-list">
 			{#each Object.keys(tonicMap) as tonic}
@@ -516,7 +525,8 @@
 		<div class="center">
 			<div id="main-circle">
 				<div id="inner-circle" />
-				<div class="arrow-up" />
+				<div id="arrow-up" />
+				<div id="relative-minor">({relativeMinor} minor)</div>
 				<div id="mid-circle" />
 				<div id="semicircle" />
 				<div id="main-border" />
