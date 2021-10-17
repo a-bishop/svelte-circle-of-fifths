@@ -3,14 +3,6 @@
 	import '../app.css';
 </script>
 
-<main>
-    <slot />
-</main>
-
-<footer>
-	<p><a href="https://kit.svelte.dev">kit.svelte.dev</a></p>
-</footer>
-
 <style>
 	main {
 		flex: 1;
@@ -20,7 +12,7 @@
 		width: 100%;
 		max-width: 1024px;
 		margin: 0 auto;
-        box-sizing: border-box;
+		box-sizing: border-box;
 	}
 
 	footer {
@@ -41,3 +33,13 @@
 		}
 	}
 </style>
+
+<main>
+	<slot />
+</main>
+
+<footer>
+	<p>
+		<a href="https://kit.svelte.dev">kit.svelte.dev</a>
+	</p>
+</footer>
