@@ -267,19 +267,25 @@
 		--arrow-left: 240px;
 		--arrow-rotate: 0deg;
 	}
-	.center {
+	.flex-row {
+		display: flex;
+		flex-direction: row;
+	}
+	.flex-column {
 		display: flex;
 		flex-direction: column;
 		margin: auto;
 	}
+	.tonic-title {
+		margin-bottom: 1.5rem;
+	}
 	.tonic-selection-list {
-		display: flex;
-		justify-content: center;
-		list-style: none;
-		flex-wrap: wrap;
-		cursor: pointer;
-		max-width: 600px;
-		margin: 20px auto;
+		display: grid;
+		row-gap: 1rem;
+		grid-template-columns: 1fr 1fr;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
 	}
 	.tonic-selection-list-item {
 		display: flex;
@@ -287,13 +293,13 @@
 		justify-content: center;
 		font-size: 120%;
 		font-weight: bold;
-		margin: 10px;
 		padding: 10px;
 		width: 25px;
 		text-align: center;
 		background: linen;
 		box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.69);
 		border-radius: 10px;
+		cursor: pointer;
 	}
 	#main-circle {
 		position: relative;
@@ -456,7 +462,6 @@
 		top: var(--degree_IV_top);
 		left: var(--degree_IV_left);
 	}
-
 	#relative-minor {
 		width: 100px;
 		display: flex;
@@ -466,7 +471,6 @@
 		top: 230px;
 		left: 220px;
 	}
-
 	#arrow-up {
 		width: 0;
 		height: 0;
@@ -479,7 +483,6 @@
 		left: var(--arrow-left);
 		transform: rotate(var(--arrow-rotate));
 	}
-
 	#semicircle {
 		position: absolute;
 		height: 500px;
@@ -513,38 +516,42 @@
 </style>
 
 <body>
-	<div class="center">
+	<div class="flex-column">
 		<h1>Circle of Fifths</h1>
-		<h3 class="center">Choose Tonic:</h3>
-		<ul class="tonic-selection-list">
-			{#each Object.keys(tonicMap) as tonic}
-				<li class="tonic-selection-list-item" on:click={handleClick}>{tonic}</li>
-			{/each}
-		</ul>
+		<div class="flex-row">
+			<div class="flex-column">
+				<h3 class="flex-column tonic-title">Choose Tonic:</h3>
+				<ul class="tonic-selection-list">
+					{#each Object.keys(tonicMap) as tonic}
+						<li class="tonic-selection-list-item" on:click={handleClick}>{tonic}</li>
+					{/each}
+				</ul>
+			</div>
 
-		<div class="center">
-			<div id="main-circle">
-				<div id="inner-circle" />
-				<div id="arrow-up" />
-				<div id="relative-minor">({relativeMinor} minor)</div>
-				<div id="mid-circle" />
-				<div id="semicircle" />
-				<div id="main-border" />
+			<div class="flex-column">
+				<div id="main-circle">
+					<div id="inner-circle" />
+					<div id="arrow-up" />
+					<div id="relative-minor">({relativeMinor} minor)</div>
+					<div id="mid-circle" />
+					<div id="semicircle" />
+					<div id="main-border" />
 
-				{#each Array(6) as _, i}
-					<div class="line line_{i + 1}" />
-				{/each}
+					{#each Array(6) as _, i}
+						<div class="line line_{i + 1}" />
+					{/each}
 
-				{#each notes as note, i}
-					<div class="note note_{i + 1}">{note}</div>
-				{/each}
+					{#each notes as note, i}
+						<div class="note note_{i + 1}">{note}</div>
+					{/each}
 
-				{#each degrees as degree}
-					<div class="scaleDegree degree_{degree}">
-						{degree}
-						{#if degree === 'vii'}&deg;{/if}
-					</div>
-				{/each}
+					{#each degrees as degree}
+						<div class="scaleDegree degree_{degree}">
+							{degree}
+							{#if degree === 'vii'}&deg;{/if}
+						</div>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>
