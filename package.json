@@ -5,8 +5,8 @@
     "dev": "svelte-kit dev",
     "develop": "svelte-kit dev",
     "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
     "deploy-gh-pages": "git checkout master && git pull && git checkout gh-pages && git rebase master && npm run build && cp -a ./build/ . && git add . && git commit -m 'gh pages deploy' && git push --force-with-lease",
+    "preview": "svelte-kit preview",    
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. ."
   },
