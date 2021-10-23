@@ -19,11 +19,11 @@
 		'-7': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
 		'-6': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
 		'-5': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
-		'-4': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
-		'-3': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
-		'-2': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
-		'-1': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
-		'0': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-4': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-3': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-2': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'-1': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
+		'0': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
 		'1': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
 		'2': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'A♭', 'E♭', 'B♭', 'F'],
 		'3': ['C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'E♭', 'B♭', 'F'],
@@ -39,10 +39,11 @@
 		'13': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯']
 	};
 
-	// corresponds to the css positioning for the scale degree and arrow at each pie segment,
+	// corresponds to the css values for positioning things at each pie segment,
 	// starting at the 12:00 clock position and ending at the 11:00 position.
-	const cssPositions = [
+	const positions = [
 		{
+			angle: '-15deg',
 			scaleDegree: {
 				top: '115px',
 				left: '200px'
@@ -54,6 +55,7 @@
 			}
 		},
 		{
+			angle: '15deg',
 			scaleDegree: {
 				top: '130px',
 				left: '265px'
@@ -65,6 +67,7 @@
 			}
 		},
 		{
+			angle: '45deg',
 			scaleDegree: {
 				top: '175px',
 				left: '310px'
@@ -76,6 +79,7 @@
 			}
 		},
 		{
+			angle: '75deg',
 			scaleDegree: {
 				top: '235px',
 				left: '325px'
@@ -87,6 +91,7 @@
 			}
 		},
 		{
+			angle: '105deg',
 			scaleDegree: {
 				top: '305px',
 				left: '310px'
@@ -98,6 +103,7 @@
 			}
 		},
 		{
+			angle: '135deg',
 			scaleDegree: {
 				top: '345px',
 				left: '265px'
@@ -109,6 +115,7 @@
 			}
 		},
 		{
+			angle: '165deg',
 			scaleDegree: {
 				top: '360px',
 				left: '200px'
@@ -120,6 +127,7 @@
 			}
 		},
 		{
+			angle: '195deg',
 			scaleDegree: {
 				top: '345px',
 				left: '140px'
@@ -131,6 +139,7 @@
 			}
 		},
 		{
+			angle: '225deg',
 			scaleDegree: {
 				top: '305px',
 				left: '100px'
@@ -142,6 +151,7 @@
 			}
 		},
 		{
+			angle: '255deg',
 			scaleDegree: {
 				top: '235px',
 				left: '80px'
@@ -153,6 +163,7 @@
 			}
 		},
 		{
+			angle: '285deg',
 			scaleDegree: {
 				top: '175px',
 				left: '95px'
@@ -164,6 +175,7 @@
 			}
 		},
 		{
+			angle: '315deg',
 			scaleDegree: {
 				top: '130px',
 				left: '140px'
@@ -174,21 +186,6 @@
 				rotate: '-30deg'
 			}
 		}
-	];
-
-	const positionAngles = [
-		'-15deg',
-		'15deg',
-		'45deg',
-		'75deg',
-		'105deg',
-		'135deg',
-		'165deg',
-		'195deg',
-		'225deg',
-		'255deg',
-		'285deg',
-		'315deg'
 	];
 
 	const tonicMap = {
@@ -213,15 +210,14 @@
 	const degrees = ['IV', 'I', 'V', 'II', 'vi', 'iii', 'vii'];
 
 	let tonic = 'C';
-	$: kSig = tonicMap[tonic].kSig;
-	$: notes = keySignatures[kSig];
-	$: relativeMinor = tonicMap[tonic].relativeMinor;
-	$: rotation = tonicMap[tonic].rotation;
-	$: angle = positionAngles[rotation];
-	$: arrowPosition = tonicMap[tonic].arrowPosition;
-	$: arrowTop = cssPositions[arrowPosition].arrow.top;
-	$: arrowLeft = cssPositions[arrowPosition].arrow.left;
-	$: arrowRotate = cssPositions[arrowPosition].arrow.rotate;
+	$: data = tonicMap[tonic];
+	$: notes = keySignatures[data.kSig];
+	$: relativeMinor = data.relativeMinor;
+	$: angle = positions[data.rotation].angle;
+	$: arrowPosition = data.arrowPosition;
+	$: arrowTop = positions[arrowPosition].arrow.top;
+	$: arrowLeft = positions[arrowPosition].arrow.left;
+	$: arrowRotate = positions[arrowPosition].arrow.rotate;
 	$: tonic && ready && update();
 
 	function update() {
@@ -231,11 +227,11 @@
 		rootStyle.setProperty(`--arrow-left`, arrowLeft);
 		rootStyle.setProperty(`--arrow-rotate`, arrowRotate);
 
-		let j = rotation;
+		let j = data.rotation;
 		for (let i = 0; i < degrees.length; i++) {
-			rootStyle.setProperty(`--degree_${degrees[i]}_top`, cssPositions[j].scaleDegree.top);
-			rootStyle.setProperty(`--degree_${degrees[i]}_left`, cssPositions[j].scaleDegree.left);
-			j = (j + 1) % positionAngles.length;
+			rootStyle.setProperty(`--degree_${degrees[i]}_top`, positions[j].scaleDegree.top);
+			rootStyle.setProperty(`--degree_${degrees[i]}_left`, positions[j].scaleDegree.left);
+			j = (j + 1) % positions.length;
 		}
 	}
 
@@ -267,6 +263,9 @@
 		--arrow-left: 240px;
 		--arrow-rotate: 0deg;
 	}
+	.fixed-width {
+		width: 800px;
+	}
 	.flex-row {
 		display: flex;
 		flex-direction: row;
@@ -275,17 +274,6 @@
 		display: flex;
 		flex-direction: column;
 		margin: auto;
-	}
-	.tonic-title {
-		margin-bottom: 1.5rem;
-	}
-	.tonic-selection-list {
-		display: grid;
-		row-gap: 1rem;
-		grid-template-columns: 1fr 1fr;
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
 	}
 	.tonic-selection-list-item {
 		display: flex;
@@ -300,42 +288,6 @@
 		box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.69);
 		border-radius: 10px;
 		cursor: pointer;
-	}
-	#main-circle {
-		position: relative;
-		height: 500px;
-		width: 500px;
-		border-radius: 50%;
-		border: 0;
-	}
-	#main-border {
-		position: absolute;
-		height: 500px;
-		width: 500px;
-		border-radius: 50%;
-		border: 1px solid black;
-		z-index: 4;
-	}
-	#inner-circle {
-		position: absolute;
-		border: 1px solid black;
-		height: 200px;
-		width: 200px;
-		top: 150px;
-		left: 150px;
-		border-radius: 50%;
-		background-color: var(--white);
-		z-index: 5;
-	}
-	#mid-circle {
-		position: absolute;
-		border: 1px solid black;
-		height: 300px;
-		width: 300px;
-		top: 100px;
-		left: 100px;
-		border-radius: 50%;
-		z-index: 4;
 	}
 	.line {
 		position: absolute;
@@ -462,6 +414,53 @@
 		top: var(--degree_IV_top);
 		left: var(--degree_IV_left);
 	}
+	#main-circle {
+		position: relative;
+		height: 500px;
+		width: 500px;
+		border-radius: 50%;
+		border: 0;
+	}
+	#main-border {
+		position: absolute;
+		height: 500px;
+		width: 500px;
+		border-radius: 50%;
+		border: 1px solid black;
+		z-index: 4;
+	}
+	#inner-circle {
+		position: absolute;
+		border: 1px solid black;
+		height: 200px;
+		width: 200px;
+		top: 150px;
+		left: 150px;
+		border-radius: 50%;
+		background-color: var(--white);
+		z-index: 5;
+	}
+	#mid-circle {
+		position: absolute;
+		border: 1px solid black;
+		height: 300px;
+		width: 300px;
+		top: 100px;
+		left: 100px;
+		border-radius: 50%;
+		z-index: 4;
+	}
+	#tonic-title {
+		margin-bottom: 1.5rem;
+	}
+	#tonic-selection-list {
+		display: grid;
+		row-gap: 1rem;
+		grid-template-columns: 1fr 1fr;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
 	#relative-minor {
 		width: 100px;
 		display: flex;
@@ -516,12 +515,12 @@
 </style>
 
 <body>
-	<div class="flex-column">
+	<div class="flex-column fixed-width">
 		<h1>Circle of Fifths</h1>
-		<div class="flex-row">
+		<div class="flex-row fixed-width">
 			<div class="flex-column">
-				<h3 class="flex-column tonic-title">Choose Tonic:</h3>
-				<ul class="tonic-selection-list">
+				<h3 class="flex-column" id="tonic-title">Choose Tonic:</h3>
+				<ul id="tonic-selection-list">
 					{#each Object.keys(tonicMap) as tonic}
 						<li class="tonic-selection-list-item" on:click={handleClick}>{tonic}</li>
 					{/each}

@@ -4,7 +4,7 @@
 </script>
 
 <style>
-	main {
+	/* main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -12,7 +12,7 @@
 		width: 800px;
 		margin: 0 auto;
 		box-sizing: border-box;
-	}
+	} */
 
 	footer {
 		display: flex;
@@ -38,8 +38,8 @@
 </main>
 
 <footer>
-	<p>
+	<!-- <p>
 		Made with
 		<a href="https://kit.svelte.dev">kit.svelte.dev</a>
-	</p>
+	</p> -->
 </footer>

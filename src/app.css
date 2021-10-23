@@ -6,10 +6,25 @@
 	box-sizing: border-box;
 }
 
+html {
+	width: 800px;
+	margin: auto;
+}
+
 body {
 	margin: 0;
 	background-color: var(--pure-white);
-	font-family: var(--font-display)
+	font-family: var(--font-display);
+}
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	width: 800px;
+	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 h1 {
