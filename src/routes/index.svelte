@@ -6,13 +6,10 @@
 		ready = true;
 	});
 
-	// Hash ta♭le of key signatures, where the key is the number of sharps (positive) or flats (negative).
+	// Hash table of key signatures, where the key is the number of sharps (positive) or flats (negative).
 	// The value is an array of note names in the key signature, starting at the 12:00 clock position
 	// and ending at the 11:00 position.
 	const keySignatures = {
-		'-13': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
-		'-12': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
-		'-11': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
 		'-10': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
 		'-9': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
 		'-8': ['C', 'G', 'D', 'A', 'E', 'B', 'G♭', 'D♭', 'A♭', 'E♭', 'B♭', 'F'],
@@ -33,10 +30,7 @@
 		'7': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
 		'8': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
 		'9': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
-		'10': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
-		'11': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
-		'12': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯'],
-		'13': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯']
+		'10': ['B♯', 'G', 'D', 'A', 'E', 'B', 'F♯', 'C♯', 'G♯', 'D♯', 'A♯', 'E♯']
 	};
 
 	// corresponds to the css values for positioning things at each pie segment,
@@ -327,7 +321,6 @@
 		font-weight: bold;
 		text-align: center;
 		width: 100px;
-		/* border: 1px solid lightblue; */
 	}
 	.note_7 {
 		bottom: 30px;
