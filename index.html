@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+
+		
+
+		<link rel="modulepreload" href="/svelte-circle-of-fifths/_app/start-986c2ea0.js">
+		<link rel="modulepreload" href="/svelte-circle-of-fifths/_app/chunks/vendor-0bc94357.js">
+		<link rel="modulepreload" href="/svelte-circle-of-fifths/_app/pages/__layout.svelte-8b075934.js">
+		<link rel="modulepreload" href="/svelte-circle-of-fifths/_app/pages/index.svelte-5bc5fea1.js">
+		<link rel="stylesheet" href="/svelte-circle-of-fifths/_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/svelte-circle-of-fifths/_app/assets/pages/__layout.svelte-9ce80f30.css">
+		<link rel="stylesheet" href="/svelte-circle-of-fifths/_app/assets/pages/index.svelte-f9fdfb8b.css">
+
+		<script type="module">
+			import { start } from "/svelte-circle-of-fifths/_app/start-986c2ea0.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"/svelte-circle-of-fifths","assets":"/svelte-circle-of-fifths"},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/svelte-circle-of-fifths/_app/pages/__layout.svelte-8b075934.js"),
+						import("/svelte-circle-of-fifths/_app/pages/index.svelte-5bc5fea1.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+<main><div class="flex-column fixed-width svelte-cxt94d"><h1>Circle of Fifths</h1>
+<div class="flex-column svelte-cxt94d"><div class="flex-column svelte-cxt94d"><h3 class="flex-column svelte-cxt94d" id="tonic-title">Choose Tonic:</h3>
+		<ul id="tonic-selection-list" class="svelte-cxt94d"><li class="tonic-selection-list-item svelte-cxt94d">C</li><li class="tonic-selection-list-item svelte-cxt94d">G</li><li class="tonic-selection-list-item svelte-cxt94d">D</li><li class="tonic-selection-list-item svelte-cxt94d">A</li><li class="tonic-selection-list-item svelte-cxt94d">E</li><li class="tonic-selection-list-item svelte-cxt94d">B</li><li class="tonic-selection-list-item svelte-cxt94d">G♭</li><li class="tonic-selection-list-item svelte-cxt94d">D♭</li><li class="tonic-selection-list-item svelte-cxt94d">A♭</li><li class="tonic-selection-list-item svelte-cxt94d">E♭</li><li class="tonic-selection-list-item svelte-cxt94d">B♭</li><li class="tonic-selection-list-item svelte-cxt94d">F</li><li class="tonic-selection-list-item svelte-cxt94d">D♯</li><li class="tonic-selection-list-item svelte-cxt94d">G♯</li><li class="tonic-selection-list-item svelte-cxt94d">C♯</li><li class="tonic-selection-list-item svelte-cxt94d">F♯</li></ul></div></div>
+
+<div class="flex-column sm-overflowx-scroll svelte-cxt94d"><div id="main-circle" class="svelte-cxt94d"><div id="inner-circle" class="svelte-cxt94d"></div>
+		<div id="arrow" class="svelte-cxt94d"></div>
+		<div id="relative-minor" class="svelte-cxt94d">(a minor)</div>
+		<div id="mid-circle" class="svelte-cxt94d"></div>
+		<div id="semicircle" class="svelte-cxt94d"></div>
+		<div id="main-border" class="svelte-cxt94d"></div>
+
+		<div class="line line_1 svelte-cxt94d"></div><div class="line line_2 svelte-cxt94d"></div><div class="line line_3 svelte-cxt94d"></div><div class="line line_4 svelte-cxt94d"></div><div class="line line_5 svelte-cxt94d"></div><div class="line line_6 svelte-cxt94d"></div>
+
+		<div class="note note_1 svelte-cxt94d">C</div><div class="note note_2 svelte-cxt94d">G</div><div class="note note_3 svelte-cxt94d">D</div><div class="note note_4 svelte-cxt94d">A</div><div class="note note_5 svelte-cxt94d">E</div><div class="note note_6 svelte-cxt94d">B</div><div class="note note_7 svelte-cxt94d">F♯</div><div class="note note_8 svelte-cxt94d">D♭</div><div class="note note_9 svelte-cxt94d">A♭</div><div class="note note_10 svelte-cxt94d">E♭</div><div class="note note_11 svelte-cxt94d">B♭</div><div class="note note_12 svelte-cxt94d">F</div>
+
+		<div class="scaleDegree degree_IV svelte-cxt94d">IV
+				
+			</div><div class="scaleDegree degree_I svelte-cxt94d">I
+				
+			</div><div class="scaleDegree degree_V svelte-cxt94d">V
+				
+			</div><div class="scaleDegree degree_II svelte-cxt94d">II
+				
+			</div><div class="scaleDegree degree_vi svelte-cxt94d">vi
+				
+			</div><div class="scaleDegree degree_iii svelte-cxt94d">iii
+				
+			</div><div class="scaleDegree degree_vii svelte-cxt94d">vii
+				°
+			</div></div></div></div></main>
+
+<footer></footer>
+
+
+
+	
+</div>
+	</body>
+</html>

@@ -1,0 +1,1 @@
+:root{--font-display:"Open Sans",sans-serif;--pure-white:#ffffff;--primary-color:#dbdbdb;--secondary-color:aliceblue;box-sizing:border-box}body{margin:0;background-color:var(--pure-white);font-family:var(--font-display)}main{display:flex;flex-direction:column;padding:1rem;margin:0 auto}h1{text-align:center}
