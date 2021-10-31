@@ -5,7 +5,7 @@
     "dev": "svelte-kit dev",
     "develop": "svelte-kit dev",
     "build": "svelte-kit build",
-    "deploy-gh-pages": "git checkout master && git pull && git branch -D gh-pages && git checkout -b gh-pages && npm run build && cp -a ./build/ . && touch .nojekyll && git add . && git commit -m 'gh pages deploy' && git push --set-upstream origin gh-pages --force-with-lease",
+    "deploy": "git checkout master && git pull && git branch -D gh-pages && git checkout -b gh-pages && npm run build && cp -a ./build/ . && touch .nojekyll && git add . && git commit -m 'gh pages deploy' && git push --set-upstream origin gh-pages --force-with-lease",
     "preview": "svelte-kit preview",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. ."
@@ -20,10 +20,13 @@
     "eslint-plugin-svelte3": "^3.2.0",
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
-    "svelte": "^3.34.0",
+    "svelte": "^3.44.0",
     "svelte-preprocess": "^4.0.0",
     "tslib": "^2.0.0",
     "typescript": "^4.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@babel/preset-env": "^7.15.8"
+  }
 }
